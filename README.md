@@ -6,16 +6,16 @@
 - e.g. export AWS_ACCESS_KEY_ID="$myID" && export AWS_SECRET_ACCESS_KEY="$myKEY"
 
 - Download + install terraform
-- https://www.terraform.io/downloads.html
-- https://www.terraform.io/intro/getting-started/install.html
+- - https://www.terraform.io/downloads.html
+- - https://www.terraform.io/intro/getting-started/install.html
 
 - Download + install kubectl
-- https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
+- - https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
 
 - Download + install heptio-authenticator-aws
-- https://github.com/kubernetes-sigs/aws-iam-authenticator
-- https://aws.amazon.com/blogs/opensource/deploying-heptio-authenticator-kops/
-- https://docs.aws.amazon.com/eks/latest/userguide/configure-kubectl.html
+- - https://github.com/kubernetes-sigs/aws-iam-authenticator
+- - https://aws.amazon.com/blogs/opensource/deploying-heptio-authenticator-kops/
+- - https://docs.aws.amazon.com/eks/latest/userguide/configure-kubectl.html
 
 # Steps :
 
@@ -27,7 +27,7 @@
 - terraform plan
 - terraform apply
 
-- Now the cluster will build. This will take approx 10 minutes.
+Now the cluster will build. This will take approx 10 minutes.
 
 - mkdir ~/.kube/
 - touch ~/.kube/config
@@ -35,7 +35,7 @@
 
 - kubectl get pods 
 
-- If everything is installed and setup correctly you should ge the message 'No resources found.'
+If everything is installed and setup correctly you should ge the message 'No resources found.'
 
 - terraform output config-map-aws-auth > aws-auth.yaml
 - kubectl apply -f aws-auth.yaml
@@ -51,6 +51,7 @@
 - kubectl get pods -n demo-service
 - kubectl get service -n demo-service
 
+To verify
 - curl http://$EXTERNAL-IP(ELB provided in the get service output):8080
 
 
